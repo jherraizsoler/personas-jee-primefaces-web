@@ -1,48 +1,65 @@
 
-**                 Readme y proyecto realizado por Jorge Herraiz Soler tiene todos derechos reservados, prohibido sin autorización del autor @jherraizsoler        **
----
-# Procedimiento para iniciar desde cero este proyecto (Personas-JEE-WEB)                          
----
+# Sistema de Gestión de Personas con Java EE
+
+**Readme y proyecto realizado por Jorge Herraiz Soler — Todos los derechos reservados, prohibida su reproducción sin autorización del autor [@jherraizsoler](https://github.com/jherraizsoler)**
 
 ---
-## 1. REQUERIMIENTOS TECNICOS  Y  PRACTICOS
 
-1. Tener Apache Netbeans IDE 26  
- 
-2. Tener instalado el jdk-21  
-   | java -version 21.0.7 | 
+## 📌 Descripción del Proyecto
+Este proyecto es una aplicación web empresarial para la **gestión de personas**, desarrollada sobre la plataforma **Java EE (Jakarta EE)**.  
 
-3. Tener instalado GassFish Server 8.0.0  
-   | Propiedades > Java (Pestaña) >> Java Platform JDK =>  JDK 21  | 
+Implementa la arquitectura **MVC (Modelo-Vista-Controlador)** y utiliza **CDI** para la inyección de dependencias, garantizando un diseño desacoplado y mantenible.  
 
-   Vinculo (revisar en caso de no tener instalado GassFish Server 8.0.0 )
-        - Archivo  / url  --  Documentation/readmeInstallGlassfishServer8.0.0.md
----
+La aplicación permite realizar operaciones **CRUD (Crear, Leer, Actualizar, Borrar)** sobre la información de personas y usuarios.  
+
+La **persistencia de datos** se gestiona con **JPA + EclipseLink** en una base de datos **MySQL**.  
+La **interfaz de usuario** está construida con **JSF (JavaServer Faces)** y **PrimeFaces**, proporcionando una experiencia rica y moderna.
 
 ---
-## 2. PROCEDIMIENTO   APPLICATION   DEPLOY Personas-JEE-WEB
 
-1. Tener instalado MySQL Workbench 8.0.42  (Community Version)
+## ⚙️ Tecnologías Principales
+- **Backend:** Java, Jakarta EE, EJB, JPA, EclipseLink  
+- **Frontend:** JSF, PrimeFaces  
+- **Inyección de Dependencias:** CDI (Contexts and Dependency Injection)  
+- **Base de Datos:** MySQL  
+- **Servidor:** GlassFish Server  
+- **Gestor de Dependencias:** Maven  
 
-2. Dentro de MySQL Workbench crear Schema con el nombre test 
+---
 
-3. Dentro de MySQL Workbench en Server > Data Import  seleccionar la carpeta que esta en Documentation que se llama importarBD_test y darle a importar
+## 🚀 Procedimiento para iniciar desde cero este proyecto (`Personas-JEE-WEB`)
 
-4. Tener instalado Glassfish Server 8.0.0 en caso de no tenerlo instalado 
-    - Archivo  / url  --  Documentation/readmeInstallGlassfishServer8.0.0.md
+### 1. Requerimientos Técnicos y Prácticos
+- Tener **Apache NetBeans IDE 26** instalado.  
+- Tener instalado el **JDK 21**  
+  ```bash
+  java -version
+  # output esperado: 21.0.7
+  ```
+- Tener instalado **GlassFish Server 8.0.0**  
+  - En NetBeans:  
+    `Propiedades > Java (Pestaña) >> Java Platform JDK => JDK 21`  
 
-5. Configurar el DataSource  PersonaPool / PersonaDB  dentro de Glassfish 
-    - Archivo / url  --  Documentation/readmeConfigurateDataSourceGlassfish.md
+📄 Si no tienes GlassFish Server 8.0.0:  
+[readmeInstallGlassfishServer8.0.0.md](Documentation/readmeInstallGlassfishServer8.0.0.md)
 
-6. Configurar el DataSource  UsuarioPool / UsuarioDB  dentro de Glassfish 
-    - Archivo / url  --  Documentation/readmeConfigurateDataSourceGlassfish.md
+---
 
+### 2. Procedimiento para Application Deploy (`Personas-JEE-WEB`)
+1. Instalar **MySQL Workbench 8.0.42 (Community Version)**  
+2. En MySQL Workbench crear un **Schema** llamado `test`.  
+3. Importar la base de datos:  
+   - `Server > Data Import`  
+   - Seleccionar la carpeta `Documentation/importarBD_test` y darle a **Importar**.  
+4. Configurar **GlassFish Server 8.0.0** si no está instalado.  
+   - 📄 [readmeInstallGlassfishServer8.0.0.md](Documentation/readmeInstallGlassfishServer8.0.0.md)  
+5. Configurar los **DataSource** en GlassFish:  
+   - `PersonaPool / PersonaDB`  
+   - `UsuarioPool / UsuarioDB`  
 
-7. Dentro del paquete cliente.ciclovidajpa tenemos 5 archivos .java que nos 
-   permitiran poder gestionar y testear operaciones CRUD con Personas y Usuarios
+📄 Guía de configuración:  
+[readmeConfigurateDataSourceGlassfish.md](Documentation/readmeConfigurateDataSourceGlassfish.md)  
 
-        > EncontrarObjetoJPA.java
-        > PersistirObjetoJPA.java
-        > ActualizarObjetoJPA.java
-        > ActualizarObjetoSesionLarga.java
-        > EliminarObjetoJPA.java
+---
+
+✅ Con esto tendrás tu proyecto **listo para compilar y ejecutar** en **NetBeans + GlassFish + MySQL** 🚀
